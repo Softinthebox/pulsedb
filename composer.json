@@ -1,0 +1,21 @@
+{
+  "name" : "Softinthebox/pulsedb",
+  "description" : "Pulse Data Base Connector",
+  "authors": [
+    {
+        "name": "Pedro Teixeira",
+        "email": "hello@pedroteixeira.pro"
+    }
+  ],
+  "require": {
+      "php": ">=5.5.0"
+  },
+  "autoload" : {
+    "psr-4" : {
+      "PulseDB\\": "src/PulseDB",
+      "PulseCache\\": "src/PulseCache",
+      "PulseException\\": "src/PulseException"
+    }
+  },
+  "license": "LGPL-2.1-only"
+}
