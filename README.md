@@ -2,7 +2,7 @@
 Pulse Data Base Connector
 
 ## Installation & loading
-Monday API is available on [Packagist](https://packagist.org/packages/pulseframework/pulsedb) (using semantic versioning), and installation via [Composer](https://getcomposer.org) is the recommended way to install PulseDB. Just add this line to your `composer.json` file:
+PulseDB is available on [Packagist](https://packagist.org/packages/pulseframework/pulsedb) (using semantic versioning), and installation via [Composer](https://getcomposer.org) is the recommended way to install PulseDB. Just add this line to your `composer.json` file:
 
 ```json
 "pulseframework/pulsedb": "~0.1"
