@@ -1,5 +1,5 @@
 {
-  "name" : "softinthebox/pulsedb",
+  "name" : "pulseframework/pulsedb",
   "description" : "Pulse Data Base Connector",
   "authors": [
     {
@@ -8,7 +8,8 @@
     }
   ],
   "require": {
-      "php": ">=5.5.0"
+      "php": ">=5.5.0",
+      "pulseframework/route": "^1.0"
   },
   "autoload" : {
     "psr-4" : {
