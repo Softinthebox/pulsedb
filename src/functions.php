@@ -24,7 +24,7 @@
 
 function pSQL($string, $htmlOK = false)
 {
-    return Db::getInstance()->escape($string, $htmlOK);
+    return PulseDB\PulseDb::getInstance()->escape($string, $htmlOK);
 }
 
 function bqSQL($string)
