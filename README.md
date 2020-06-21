@@ -5,7 +5,7 @@ Pulse Data Base Connector
 PulseDB is available on [Packagist](https://packagist.org/packages/pulseframework/pulsedb) (using semantic versioning), and installation via [Composer](https://getcomposer.org) is the recommended way to install PulseDB. Just add this line to your `composer.json` file:
 
 ```json
-"pulseframework/pulsedb": "~0.1"
+"pulseframework/pulsedb": "~1.0"
 ```
 
 or run
