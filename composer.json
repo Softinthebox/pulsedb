@@ -15,7 +15,8 @@
     "psr-4" : {
       "PulseDB\\": "src/PulseDB",
       "PulseCache\\": "src/PulseCache"
-    }
+    },
+    "files": ["src/functions.php"]
   },
   "license": "LGPL-2.1-only"
 }
