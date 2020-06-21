@@ -1,40 +1,39 @@
 <?php
 /**
- * 2007-2018 PrestaShop.
- *
- * NOTICE OF LICENSE
- *
- * This source file is subject to the Open Software License (OSL 3.0)
- * that is bundled with this package in the file LICENSE.txt.
- * It is also available through the world-wide-web at this URL:
- * https://opensource.org/licenses/OSL-3.0
- * If you did not receive a copy of the license and are unable to
- * obtain it through the world-wide-web, please send an email
- * to license@prestashop.com so we can send you a copy immediately.
- *
- * DISCLAIMER
- *
- * Do not edit or add to this file if you wish to upgrade PrestaShop to newer
- * versions in the future. If you wish to customize PrestaShop for your
- * needs please refer to http://www.prestashop.com for more information.
- *
- * @author    PrestaShop SA <contact@prestashop.com>
- * @copyright 2007-2018 PrestaShop SA
- * @license   https://opensource.org/licenses/OSL-3.0 Open Software License (OSL 3.0)
- * International Registered Trademark & Property of PrestaShop SA
- */
+*    2015 S O F T I N T H E B O X
+*
+* NOTICE OF LICENSE
+*
+* It is also available through the world-wide-web at this URL:
+* http://www.pulseframework.com/developer-platform
+* If you did not receive a copy of the license and are unable to
+* obtain it through the world-wide-web, please send an email
+* to hello@pedroteixeira.pro so we can send you a copy immediately.
+*
+* DISCLAIMER
+*
+* Do not edit or add to this file if you wish to upgrade this to newer
+* versions in the future. If you wish to customize this for your
+* needs please refer to http://www.pulseframework.com for more information.
+*
+*  @author Pedro Teixeira - Pulse Framework <me@pedroteixeira.pro>
+*  @copyright  2015 Pulse Framework
+*  @license    http://www.pulseframework.com/license
+*  International Registered Trademark & Property of Pulse Framework
+*/
 
-/**
- * Class DbMySQLiCore.
- *
- * @since 1.5.0,1
- */
-class DbMySQLiCore extends PulseDb
+namespace PulseDB;
+
+use PDO;
+use PulseDB\PulseDb;
+use PulseDB\DbQuery;
+
+class DbMySQLi extends PulseDb
 {
     /** @var mysqli */
     protected $link;
 
-    /* @var mysqli_result */
+    /** @var mysqli_result */
     protected $result;
 
     /**
@@ -44,7 +43,7 @@ class DbMySQLiCore extends PulseDb
      *
      * @return mysqli
      *
-     * @throws PulseDatabaseExceptionCore
+     * @throws PulseDatabaseException
      */
     public function connect()
     {
@@ -70,12 +69,12 @@ class DbMySQLiCore extends PulseDb
 
         // Do not use object way for error because this work bad before PHP 5.2.9
         if (mysqli_connect_error()) {
-            throw new PulseDatabaseExceptionCore(sprintf(Tools::displayError('Link to database cannot be established: %s'), mysqli_connect_error()));
+            throw new PulseDatabaseException(sprintf('Link to database cannot be established: %s', mysqli_connect_error()));
         }
 
         // UTF-8 support
         if (!$this->link->query('SET NAMES \'utf8\'')) {
-            throw new PulseDatabaseExceptionCore(Tools::displayError('PrestaShop Fatal error: no utf-8 support. Please check your server configuration.'));
+            throw new PulseDatabaseException('Fatal error: no utf-8 support. Please check your server configuration.');
         }
 
         $this->link->query('SET SESSION sql_mode = \'\'');
@@ -381,6 +380,7 @@ class DbMySQLiCore extends PulseDb
                 if (in_array($row['Support'], array('DEFAULT', 'YES'))) {
                     $value = 'InnoDB';
                 }
+
                 break;
             }
         }

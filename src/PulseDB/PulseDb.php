@@ -24,6 +24,7 @@
 
 namespace PulseDB;
 
+use PulseDB\DbQuery;
 use PulseException\DataBase as PulseDatabaseException;
 
 abstract class PulseDb
@@ -293,9 +294,9 @@ abstract class PulseDb
     {
         $class = '';
         if (PHP_VERSION_ID >= 50200 && extension_loaded('pdo_mysql')) {
-            $class = 'DbPDO';
+            $class = 'PulseDB\DbPDO';
         } elseif (extension_loaded('mysqli')) {
-            $class = 'DbMySQLi';
+            $class = 'PulseDB\DbMySQLi';
         }
 
         if (empty($class)) {
@@ -603,7 +604,7 @@ abstract class PulseDb
 
         // This method must be used only with queries which display results
         if (!preg_match('#^\s*\(?\s*(select|show|explain|describe|desc)\s#i', $sql)) {
-            if (defined('_PULSE_MODE_DEV_') && _PULSE_MODE_DEV_) {
+            if (defined('_MODE_DEV_') && _MODE_DEV_) {
                 throw new PulseDatabaseException('Db->executeS() must be used only with select, show, explain or describe queries');
             }
 
@@ -785,7 +786,7 @@ abstract class PulseDb
             $string = $this->_escape($string);
 
             if (!$html_ok) {
-                $string = strip_tags(Tools::nl2br($string));
+                $string = strip_tags(self::nl2br($string));
             }
 
             if ($bq_sql === true) {
@@ -794,6 +795,11 @@ abstract class PulseDb
         }
 
         return $string;
+    }
+
+    public static function nl2br($str)
+    {
+      return str_replace(array("\r\n", "\r", "\n", "\n", PHP_EOL), '<br />', $str);
     }
 
     /**
