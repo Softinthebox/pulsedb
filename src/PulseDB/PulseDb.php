@@ -26,6 +26,11 @@ namespace PulseDB;
 
 use PulseDB\DbQuery;
 use PulseException\DataBase as PulseDatabaseException;
+use PulseCache\PulseCache as PulseCache;
+use PulseCache\CacheMemcache as CacheMemcache;
+use PulseCache\CacheMemcached as CacheMemcached;
+use PulseCache\CacheXcache as CacheXcache;
+use PulseCache\CacheApc as CacheApc;
 
 abstract class PulseDb
 {

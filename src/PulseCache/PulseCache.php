@@ -28,6 +28,7 @@ use PulseCache\CacheMemcache as CacheMemcache;
 use PulseCache\CacheMemcached as CacheMemcached;
 use PulseCache\CacheXcache as CacheXcache;
 use PulseCache\CacheApc as CacheApc;
+use Pulse\Core\Tools;
 
 abstract class PulseCache
 {
@@ -174,7 +175,7 @@ abstract class PulseCache
     public static function getInstance()
     {
         if (!self::$instance) {
-            $caching_system = _PULSE_CACHING_SYSTEM_;
+            $caching_system = 'PulseCache\\'._PULSE_CACHING_SYSTEM_;
             self::$instance = new $caching_system();
         }
 
