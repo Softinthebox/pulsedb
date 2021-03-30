@@ -112,11 +112,25 @@ class PulseException extends Exception
 
   protected function getMessageHeader($html = true)
   {
+    switch ($this->code) {
+      case self::CRITICAL:
+        $color = 'F20000';
+        break;
+      case self::ERROR:
+        $color = 'F20000';
+        break;
+      case self::WARNING:
+        $color = 'ff8100';
+        break;
+      case self::INFO:
+        $color = '0072ff';
+        break;
+      default:
+        $color = 'F20000';
+        break;
+    }
     return '
-      <header style="background: #'.($this->code == self::CRITICAL ? 'F20000':'').'
-      '.($this->code == self::ERROR ? 'F20000':'').'
-      '.($this->code == self::WARNING ? 'ff8100':'').'
-      '.($this->code == self::INFO ? '0072ff':'').'" >
+      <header style="background: #'.$color.'" >
         '.($this->code == self::CRITICAL ? 'CRITICAL':'').'
         '.($this->code == self::ERROR ? 'ERROR':'').'
         '.($this->code == self::WARNING ? 'WARNING':'').'

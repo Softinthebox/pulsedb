@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "78a763d58bf01bfcc54778ac7ba67e2a",
+    "content-hash": "5e520ca32d22e7eb865040f68103c089",
     "packages": [
         {
             "name": "pulseframework/pulse-exception",
-            "version": "v1.0.3",
+            "version": "v1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Softinthebox/pulse-exception.git",
-                "reference": "4f97ff7e3849af672ee671ee81dbbf9d95dfed1d"
+                "reference": "a133eb3b7ba6c46af4c4bc2b70e84ee8890b3e48"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Softinthebox/pulse-exception/zipball/4f97ff7e3849af672ee671ee81dbbf9d95dfed1d",
-                "reference": "4f97ff7e3849af672ee671ee81dbbf9d95dfed1d",
+                "url": "https://api.github.com/repos/Softinthebox/pulse-exception/zipball/a133eb3b7ba6c46af4c4bc2b70e84ee8890b3e48",
+                "reference": "a133eb3b7ba6c46af4c4bc2b70e84ee8890b3e48",
                 "shasum": ""
             },
             "require": {
@@ -42,9 +42,9 @@
             "description": "Pulse exception",
             "support": {
                 "issues": "https://github.com/Softinthebox/pulse-exception/issues",
-                "source": "https://github.com/Softinthebox/pulse-exception/tree/v1.0.3"
+                "source": "https://github.com/Softinthebox/pulse-exception/tree/master"
             },
-            "time": "2020-06-20T23:38:34+00:00"
+            "time": "2020-06-21T19:40:08+00:00"
         }
     ],
     "packages-dev": [],
