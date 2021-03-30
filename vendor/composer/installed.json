@@ -1,0 +1,49 @@
+{
+    "packages": [
+        {
+            "name": "pulseframework/pulse-exception",
+            "version": "v1.0.3",
+            "version_normalized": "1.0.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Softinthebox/pulse-exception.git",
+                "reference": "4f97ff7e3849af672ee671ee81dbbf9d95dfed1d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Softinthebox/pulse-exception/zipball/4f97ff7e3849af672ee671ee81dbbf9d95dfed1d",
+                "reference": "4f97ff7e3849af672ee671ee81dbbf9d95dfed1d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.0"
+            },
+            "time": "2020-06-20T23:38:34+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "PulseException\\": "src/PulseException"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-2.1-only"
+            ],
+            "authors": [
+                {
+                    "name": "Pedro Teixeira",
+                    "email": "hello@pedroteixeira.pro"
+                }
+            ],
+            "description": "Pulse exception",
+            "support": {
+                "issues": "https://github.com/Softinthebox/pulse-exception/issues",
+                "source": "https://github.com/Softinthebox/pulse-exception/tree/v1.0.3"
+            },
+            "install-path": "../pulseframework/pulse-exception"
+        }
+    ],
+    "dev": true,
+    "dev-package-names": []
+}
