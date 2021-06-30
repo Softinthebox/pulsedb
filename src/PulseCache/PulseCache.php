@@ -28,7 +28,7 @@ use PulseCache\CacheMemcache as CacheMemcache;
 use PulseCache\CacheMemcached as CacheMemcached;
 use PulseCache\CacheXcache as CacheXcache;
 use PulseCache\CacheApc as CacheApc;
-use Pulse\Core\Tools;
+use PulseCore\Tools;
 
 abstract class PulseCache
 {
